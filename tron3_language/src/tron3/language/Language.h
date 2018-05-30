@@ -6,12 +6,14 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
+#include "tron3/language/iKnowledgeMapper.h"
 #include "tron3/language/LanguageArea.h"
+#include "tron3/knowledge/Knowledge.h"
 
 namespace tron3
 {
 // The language holds a set of language areas, each holding all word slangs of a given knowledge nature.
-class Language
+class Language : public iKnowledgeMapper
 {
 protected:
     LanguageArea oVerbsArea;        // language area for action concepts
@@ -28,6 +30,15 @@ public:
     LanguageArea* getLanguageArea(int area);
     
     std::string toString();    
+
+    // map the given knowledge concept
+    bool mapConcept(Concept& oConcept) override;    
+    // map the given knowledge category (group of concepts)
+    bool mapCategory(Category& oCategory) override;
+    // map the given knowledge area (group of categories)
+    bool mapKnowledgeArea(KnowledgeArea& oKnowledgeArea) override;    
+    // map the given knowledge (set of knowledge areas)
+    bool mapKnowledge(Knowledge& oKnowledge);
 };
 
 }  

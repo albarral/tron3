@@ -14,27 +14,31 @@
 namespace tron3
 {
 // A Slang is a group of words (elements) mapped by their name (each element representing a knowledge concept) .
-// The elements in a Slang share a common feature (their names start with the same letter).
-// A Slang is itself an element.
-class Slang : public tron::Element 
+// All elements in the Slang have a restriction: their names must start with the slang letter. This is checked on addWord() method. 
+class Slang
 {
 private:
+    char letter;     // slang letter (initial letter restriction for all slang words)
     std::map<std::string, tron::Element> mapWords; // map <name, element>
 
 public:
     Slang();
-    Slang(int id, std::string name);
+    Slang(char letter);
     ~Slang();
     
+    void setLetter(char letter) {this->letter = letter;}; 
+    char getLetter() {return letter;};
+    
     void clear();
-    void addWord(tron::Element& oElement);
+    // adds element to slang (provided it has a proper initial letter)
+    bool addWord(tron::Element& oElement);
     std::map<std::string, tron::Element>& getMapWords() {return mapWords;};
     
     // get element with the specified name, returns null if not found
     tron::Element* getWord(std::string name);
     int getNumWords() {return mapWords.size();};    
 
-    virtual std::string toString();
+    std::string toString();
 };
 
 }  

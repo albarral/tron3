@@ -6,6 +6,7 @@
 #include "TestKnowledge.h"
 #include "tron3/knowledge/Knowledge.h"
 #include "tron3/knowledge2/KnowledgeBuilder.h"
+#include "tron3/language/Language.h"
 
 using namespace log4cxx;
 
@@ -35,7 +36,12 @@ void TestKnowledge::loadKnowledge()
     
     tron3::KnowledgeBuilder::build(oKnowledge);
     
-    LOG4CXX_INFO(logger, oKnowledge.toString());        
+    LOG4CXX_INFO(logger, oKnowledge.toString());     
+    
+    tron3::Language oLanguage;
+    oLanguage.mapKnowledge(oKnowledge);
+    
+    LOG4CXX_INFO(logger, oLanguage.toString());     
 }
 
 

@@ -11,12 +11,12 @@ namespace tron3
 {
 Slang::Slang()
 {          
-    type = tron::Element::eTYPE_GROUP;
+    letter = ' ';
 }
 
-Slang::Slang(int id, std::string name) : tron::Element(id, name)
+Slang::Slang(char letter)
 {          
-    type = tron::Element::eTYPE_GROUP;
+    this->letter = letter;
 }
 
 Slang::~Slang()
@@ -29,9 +29,16 @@ void Slang::clear()
     mapWords.clear();    
 }
 
-void Slang::addWord(tron::Element& oElement)
+bool Slang::addWord(tron::Element& oElement)
 {
-    mapWords.emplace(oElement.getName(), oElement);
+    // check initial letter restriction
+    if (oElement.getName().front() == letter)
+    {
+        mapWords.emplace(oElement.getName(), oElement);
+        return true;
+    }
+    else
+        return false;
 }
 
 tron::Element* Slang::getWord(std::string name)
@@ -49,7 +56,7 @@ tron::Element* Slang::getWord(std::string name)
 
 std::string Slang::toString()
 {
-    std::string text = "Slang [" + tron::Element::toString() + "]\n";
+    std::string text = "Slang [letter = " + std::string(1, letter) + "]\n";
     for (auto& x: mapWords) 
     {
         text += x.second.toString() + "\n";        

@@ -19,6 +19,7 @@
         <itemPath>src/tron3/language/LanguageArea.h</itemPath>
         <itemPath>src/tron3/language/Slang.cpp</itemPath>
         <itemPath>src/tron3/language/Slang.h</itemPath>
+        <itemPath>src/tron3/language/iKnowledgeMapper.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -97,6 +98,11 @@
       </item>
       <item path="src/tron3/language/Slang.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/tron3/language/iKnowledgeMapper.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="2">
       <toolsSet>
@@ -132,6 +138,11 @@
       <item path="src/tron3/language/Slang.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron3/language/Slang.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron3/language/iKnowledgeMapper.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
     </conf>
   </confs>

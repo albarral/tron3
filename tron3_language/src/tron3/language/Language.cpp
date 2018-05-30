@@ -68,6 +68,53 @@ std::string Language::toString()
     return text;    
 }
 
+bool Language::mapConcept(Concept& oConcept)
+{
+    // get proper language area for concept
+    LanguageArea* pLanguageArea = getLanguageArea(oConcept.getNature());
+    // if found, map concept
+    if (pLanguageArea != nullptr)
+        return pLanguageArea->mapConcept(oConcept);
+    else
+        return false;
+}
+
+bool Language::mapCategory(Category& oCategory)
+{
+    // get proper language area for category
+    LanguageArea* pLanguageArea = getLanguageArea(oCategory.getNature());
+    // if found, map category
+    if (pLanguageArea != nullptr)
+        return pLanguageArea->mapCategory(oCategory);
+    else
+        return false;
+}
+
+bool Language::mapKnowledgeArea(KnowledgeArea& oKnowledgeArea)
+{
+    // get proper language area for knowledge area
+    LanguageArea* pLanguageArea = getLanguageArea(oKnowledgeArea.getArea());
+    // if found, map knowledge area
+    if (pLanguageArea != nullptr)
+        return pLanguageArea->mapKnowledgeArea(oKnowledgeArea);
+    else
+        return false;
+}
+
+bool Language::mapKnowledge(Knowledge& oKnowledge)
+{
+    // for each nature area
+    for (int area = 0; area < ConceptsNature::eNATURE_DIM; area++)
+    {
+        // get the knowledge area
+        KnowledgeArea* pKnowledgeArea = oKnowledge.getKnowledgeArea(area);
+        // and map it to the language
+        if (pKnowledgeArea != nullptr)
+            mapKnowledgeArea(*pKnowledgeArea);
+    }    
+    return true;
+}
+
 }
 
 

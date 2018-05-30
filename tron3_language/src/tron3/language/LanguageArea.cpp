@@ -3,7 +3,8 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
-#include <stdexcept>      // std::out_of_range
+#include <stdexcept>
+#include <algorithm>      // std::out_of_range
 
 #include "tron3/language/LanguageArea.h"
 #include "tron3/knowledge/defs/ConceptsNature.h"
@@ -25,12 +26,12 @@ void LanguageArea::clear()
     mapSlangs.clear();    
 }
 
-void LanguageArea::addSlang(std::string letter, Slang& oSlang)
+void LanguageArea::addSlang(Slang& oSlang)
 {
-    mapSlangs.emplace(letter, oSlang);
+    mapSlangs.emplace(oSlang.getLetter(), oSlang);
 }
 
-Slang* LanguageArea::getSlang(std::string letter)
+Slang* LanguageArea::getSlang(char letter)
 {
     try 
     {
@@ -52,6 +53,65 @@ std::string LanguageArea::toString()
     }
     
     return text;    
+}
+
+bool LanguageArea::mapConcept(Concept& oConcept)
+{
+    // if not proper area, skip
+    if (oConcept.getNature() != area)
+        return false;
+    else
+    {
+        // get concept initial letter
+        char letter = oConcept.getName().front();
+        // search proper slang 
+        Slang* pSlang = getSlang(letter);
+        // if found, add concept to the slang
+        if (pSlang != nullptr) 
+            pSlang->addWord(oConcept);
+        // otherwise
+        else
+        {
+            // create new slang with the concept
+            Slang oNewSlang(letter);
+            oNewSlang.addWord(oConcept);
+            //  and add it to the language area
+            addSlang(oNewSlang);
+        }
+        return true;
+    }    
+}
+
+bool LanguageArea::mapCategory(Category& oCategory)
+{
+    // if not proper area, skip
+    if (oCategory.getNature() != area)
+        return false;
+    else
+    {
+        // walk category concepts, mapping them to the language area
+        for (auto& con: oCategory.getMapConcepts()) 
+        {
+            mapConcept(con.second);           
+        }  
+        return true;
+    }
+}
+
+bool LanguageArea::mapKnowledgeArea(KnowledgeArea& oKnowledgeArea)
+{
+    // if not proper area, skip
+    if (oKnowledgeArea.getArea() != area)
+        return false;
+    else
+    {
+        // walk knowledge area categories, mapping them to the language area
+        for (auto& cat: oKnowledgeArea.getMapCategories()) 
+        {
+           mapCategory(cat.second);
+        }
+        return true;
+    }    
 }
 
 }
