@@ -7,15 +7,15 @@
  ***************************************************************************/
 
 #include <map>
-#include <string>
 
-#include "tron3/language/iKnowledgeMapper.h"
+#include "tron3/knowledge/iKnowledgeMapper.h"
+#include "tron3/language/iLanguageSearcher.h"
 #include "tron3/language/Slang.h"
 
 namespace tron3
 {
 // A knowledge area holds all concept categories of a given nature.
-class LanguageArea : public iKnowledgeMapper
+class LanguageArea : public iKnowledgeMapper, iLanguageSearcher
 {
 private:
     int area;
@@ -44,6 +44,9 @@ public:
     bool mapCategory(Category& oCategory) override;
     // map the given knowledge area (group of categories)
     bool mapKnowledgeArea(KnowledgeArea& oKnowledgeArea) override;
+    
+    // search the language element associated to given word
+    tron::Element* searchWord(std::string word) override;    
 };
 
 }  

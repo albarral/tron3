@@ -3,8 +3,7 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
-#include <stdexcept>
-#include <algorithm>      // std::out_of_range
+#include <stdexcept>      // std::out_of_range
 
 #include "tron3/language/LanguageArea.h"
 #include "tron3/knowledge/defs/ConceptsNature.h"
@@ -112,6 +111,18 @@ bool LanguageArea::mapKnowledgeArea(KnowledgeArea& oKnowledgeArea)
         }
         return true;
     }    
+}
+
+tron::Element* LanguageArea::searchWord(std::string word)
+{
+    // get slang for word's initial letter 
+    Slang* pSlang = getSlang(word.front());
+    // if found, search word in slang
+    if (pSlang != nullptr)
+        return pSlang->searchWord(word);
+    // return null if not found
+    else
+        return nullptr;
 }
 
 }

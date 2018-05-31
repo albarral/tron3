@@ -7,15 +7,14 @@
  ***************************************************************************/
 
 #include <map>
-#include <string>
 
-#include "tron/util/groups/Element.h"
+#include "tron3/language/iLanguageSearcher.h"
 
 namespace tron3
 {
 // A Slang is a group of words (elements) mapped by their name (each element representing a knowledge concept) .
 // All elements in the Slang have a restriction: their names must start with the slang letter. This is checked on addWord() method. 
-class Slang
+class Slang : public iLanguageSearcher
 {
 private:
     char letter;     // slang letter (initial letter restriction for all slang words)
@@ -32,11 +31,11 @@ public:
     void clear();
     // adds element to slang (provided it has a proper initial letter)
     bool addWord(tron::Element& oElement);
-    std::map<std::string, tron::Element>& getMapWords() {return mapWords;};
-    
-    // get element with the specified name, returns null if not found
-    tron::Element* getWord(std::string name);
+    std::map<std::string, tron::Element>& getMapWords() {return mapWords;};    
     int getNumWords() {return mapWords.size();};    
+
+    // search the language element associated to given word
+    tron::Element* searchWord(std::string word) override;
 
     std::string toString();
 };

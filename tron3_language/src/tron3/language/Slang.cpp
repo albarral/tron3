@@ -41,11 +41,11 @@ bool Slang::addWord(tron::Element& oElement)
         return false;
 }
 
-tron::Element* Slang::getWord(std::string name)
+tron::Element* Slang::searchWord(std::string word)
 {
     try 
     {
-        return &(mapWords.at(name));
+        return &(mapWords.at(word));
     }
     // return null if not found
     catch (const std::out_of_range& oor) 

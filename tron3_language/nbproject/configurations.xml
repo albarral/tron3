@@ -19,7 +19,7 @@
         <itemPath>src/tron3/language/LanguageArea.h</itemPath>
         <itemPath>src/tron3/language/Slang.cpp</itemPath>
         <itemPath>src/tron3/language/Slang.h</itemPath>
-        <itemPath>src/tron3/language/iKnowledgeMapper.h</itemPath>
+        <itemPath>src/tron3/language/iLanguageSearcher.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -98,7 +98,7 @@
       </item>
       <item path="src/tron3/language/Slang.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/tron3/language/iKnowledgeMapper.h"
+      <item path="src/tron3/language/iLanguageSearcher.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -139,7 +139,7 @@
       </item>
       <item path="src/tron3/language/Slang.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/tron3/language/iKnowledgeMapper.h"
+      <item path="src/tron3/language/iLanguageSearcher.h"
             ex="false"
             tool="3"
             flavor2="0">

@@ -6,16 +6,16 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
-#include "tron3/language/iKnowledgeMapper.h"
-#include "tron3/language/LanguageArea.h"
+#include "tron3/knowledge/iKnowledgeMapper.h"
 #include "tron3/knowledge/Knowledge.h"
+#include "tron3/language/LanguageArea.h"
 
 namespace tron3
 {
 // The language holds a set of language areas, each holding all word slangs of a given knowledge nature.
 class Language : public iKnowledgeMapper
 {
-protected:
+private:
     LanguageArea oVerbsArea;        // language area for action concepts
     LanguageArea oObjectsArea;      // language area for object concepts
     LanguageArea oQualifiersArea;   // language area for feature concepts
