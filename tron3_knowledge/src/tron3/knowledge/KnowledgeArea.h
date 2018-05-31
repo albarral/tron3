@@ -9,11 +9,12 @@
 #include <map>
 
 #include "tron3/knowledge/Category.h"
+#include "tron3/knowledge/iKnowledgeSearcher.h"
 
 namespace tron3
 {
 // A knowledge area holds all concept categories of a given nature.
-class KnowledgeArea
+class KnowledgeArea : public iKnowledgeSearcher
 {
 private:
     int area;
@@ -33,6 +34,9 @@ public:
     // get category with the specified id, returns null if not found
     Category* getCategory(int categoryId);    
     int getNumCategories() {return mapCategories.size();};    
+
+    // search the concept of given category and id
+    Concept* searchConcept(int categoryId, int conceptId) override;
     
     std::string toString();    
 };

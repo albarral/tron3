@@ -43,6 +43,18 @@ Category* KnowledgeArea::getCategory(int categoryId)
     }                    
 }
 
+Concept* KnowledgeArea::searchConcept(int categoryId, int conceptId)
+{
+    // get proper category
+    Category* pCategory = getCategory(categoryId);
+    // if found, search concept in category
+    if (pCategory != nullptr)
+        return pCategory->searchConcept(categoryId, conceptId);
+    // return null if not found
+    else
+        return nullptr;    
+}
+
 std::string KnowledgeArea::toString()
 {
     std::string text = "KnowledgeArea: area=" + ConceptsNature::getName(area) + "\n";

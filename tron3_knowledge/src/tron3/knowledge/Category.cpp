@@ -37,7 +37,7 @@ void Category::addConcept(Concept& oConcept)
     mapConcepts.emplace(oConcept.getID(), oConcept);
 }
 
-Concept* Category::getConcept(int conceptId)
+Concept* Category::searchConcept(int categoryId, int conceptId)
 {
     try 
     {
