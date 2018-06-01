@@ -11,6 +11,7 @@
             <make-dep-projects>
                 <make-dep-project>../tron3_language</make-dep-project>
                 <make-dep-project>../../tron/tron_util</make-dep-project>
+                <make-dep-project>../tron3_interpret</make-dep-project>
                 <make-dep-project>../tron3_knowledge2</make-dep-project>
                 <make-dep-project>../tron3_knowledge</make-dep-project>
             </make-dep-projects>

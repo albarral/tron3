@@ -3,6 +3,8 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
+#include <stdexcept>      // std::out_of_range
+
 #include "tron3/language/Language.h"
 #include "tron3/knowledge/defs/ConceptsNature.h"
 
@@ -10,13 +12,14 @@ namespace tron3
 {
 Language::Language()
 {          
-    oVerbsArea.setArea(ConceptsNature::eNATURE_ACTION); 
-    oObjectsArea.setArea(ConceptsNature::eNATURE_OBJECT); 
-    oQualifiersArea.setArea(ConceptsNature::eNATURE_FEATURE); 
-    oNamesArea.setArea(ConceptsNature::eNATURE_INSTANCE); 
-    oPrepositionsArea.setArea(ConceptsNature::eNATURE_NEXUS); 
+    // create empty language areas
+    LanguageArea oLanguageArea;
+    for (int area=0; area<ConceptsNature::eNATURE_DIM; area++)
+    {
+        oLanguageArea.setArea(area);
+        mapAreas.emplace(area, oLanguageArea);
+    }
 }
-
 
 Language::~Language()
 {
@@ -25,45 +28,29 @@ Language::~Language()
 
 void Language::clear()
 {
-    oVerbsArea.clear(); 
-    oObjectsArea.clear(); 
-    oQualifiersArea.clear(); 
-    oNamesArea.clear(); 
-    oPrepositionsArea.clear(); 
+    mapAreas.clear();
 }
 
 LanguageArea* Language::getLanguageArea(int area)
 {
-    switch(area)
+    try 
     {
-        case ConceptsNature::eNATURE_ACTION:
-            return &oVerbsArea;
-                
-        case ConceptsNature::eNATURE_OBJECT:
-            return &oObjectsArea;
-
-        case ConceptsNature::eNATURE_FEATURE:
-            return &oQualifiersArea;
-        
-        case ConceptsNature::eNATURE_INSTANCE:
-            return &oNamesArea;
-        
-        case ConceptsNature::eNATURE_NEXUS:
-            return &oPrepositionsArea;
-        
-        default:
-            return nullptr;
+        return &(mapAreas.at(area));
     }
+    // return null if not found
+    catch (const std::out_of_range& oor) 
+    {                
+        return nullptr;
+    }                    
 }
 
 std::string Language::toString()
 {
     std::string text = "Language\n";
-    text += oVerbsArea.toString() + "\n";        
-    text += oObjectsArea.toString() + "\n";        
-    text += oQualifiersArea.toString() + "\n";        
-    text += oNamesArea.toString() + "\n";        
-    text += oPrepositionsArea.toString() + "\n";        
+    for (auto& x: mapAreas) 
+    {
+        text += x.second.toString() + "\n";        
+    }    
     
     return text;    
 }
@@ -102,15 +89,11 @@ bool Language::mapKnowledgeArea(KnowledgeArea& oKnowledgeArea)
 }
 
 bool Language::mapKnowledge(Knowledge& oKnowledge)
-{
-    // for each nature area
-    for (int area = 0; area < ConceptsNature::eNATURE_DIM; area++)
+{    
+    // for each knowledge area, map it to the language
+    for (auto& x: oKnowledge.getMapAreas()) 
     {
-        // get the knowledge area
-        KnowledgeArea* pKnowledgeArea = oKnowledge.getKnowledgeArea(area);
-        // and map it to the language
-        if (pKnowledgeArea != nullptr)
-            mapKnowledgeArea(*pKnowledgeArea);
+        mapKnowledgeArea(x.second);
     }    
     return true;
 }

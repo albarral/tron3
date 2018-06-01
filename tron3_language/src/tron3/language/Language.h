@@ -6,6 +6,8 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
+#include <map>
+
 #include "tron3/knowledge/iKnowledgeMapper.h"
 #include "tron3/knowledge/Knowledge.h"
 #include "tron3/language/LanguageArea.h"
@@ -16,16 +18,13 @@ namespace tron3
 class Language : public iKnowledgeMapper
 {
 private:
-    LanguageArea oVerbsArea;        // language area for action concepts
-    LanguageArea oObjectsArea;      // language area for object concepts
-    LanguageArea oQualifiersArea;   // language area for feature concepts
-    LanguageArea oNamesArea;        // language area for instance concepts
-    LanguageArea oPrepositionsArea;     // language area for nexus concepts
+    std::map<int, LanguageArea> mapAreas;
 
 public:
     Language();
     ~Language ();
     
+    std::map<int, LanguageArea>& getMapAreas() {return mapAreas;};   
     void clear();
     LanguageArea* getLanguageArea(int area);
     

@@ -3,6 +3,8 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
+//#include <stdexcept>      // std::out_of_range
+
 #include "tron3/interpret/Interpreter.h"
 #include "tron3/knowledge/defs/ConceptsNature.h"
 
@@ -14,75 +16,55 @@ LoggerPtr Interpreter::logger(Logger::getLogger("tron3.interpret"));
 
 Interpreter::Interpreter()
 {          
-    oVerbsInterpreter.setArea(ConceptsNature::eNATURE_ACTION); 
-    oObjectsInterpreter.setArea(ConceptsNature::eNATURE_OBJECT); 
-    oQualifiersInterpreter.setArea(ConceptsNature::eNATURE_FEATURE); 
-    oNamesInterpreter.setArea(ConceptsNature::eNATURE_INSTANCE); 
-    oPrepositionsInterpreter.setArea(ConceptsNature::eNATURE_NEXUS); 
 }
 
 Interpreter::~Interpreter()
 {
+    mapAreaInterpreters.clear();    
 }
 
 AreaInterpreter* Interpreter::getAreaInterpreter(int area)
 {
-    switch(area)
+    try 
     {
-        case ConceptsNature::eNATURE_ACTION:
-            return &oVerbsInterpreter;
-                
-        case ConceptsNature::eNATURE_OBJECT:
-            return &oObjectsInterpreter;
-
-        case ConceptsNature::eNATURE_FEATURE:
-            return &oQualifiersInterpreter;
-        
-        case ConceptsNature::eNATURE_INSTANCE:
-            return &oNamesInterpreter;
-        
-        case ConceptsNature::eNATURE_NEXUS:
-            return &oPrepositionsInterpreter;
-        
-        default:
-            return nullptr;
+        return &(mapAreaInterpreters.at(area));
     }
+    // return null if not found
+    catch (const std::out_of_range& oor) 
+    {                
+        return nullptr;
+    }                    
 }
 
 void Interpreter::setKnowledge(Knowledge& oKnowledge)
 {
-    oVerbsInterpreter.setKnowledge(oKnowledge); 
-    oObjectsInterpreter.setKnowledge(oKnowledge);
-    oQualifiersInterpreter.setKnowledge(oKnowledge);
-    oNamesInterpreter.setKnowledge(oKnowledge);
-    oPrepositionsInterpreter.setKnowledge(oKnowledge);
+    // map knowledge to language    
+    oLanguage.mapKnowledge(oKnowledge);
+    
+    // for each knowledge area, create a symmetric interpreter area
+    for (auto& x : oKnowledge.getMapAreas()) 
+    {
+        AreaInterpreter oAreaInterpreter;
+        int area = x.second.getArea();
+        oAreaInterpreter.setArea(area);
+        oAreaInterpreter.setKnowledge(oKnowledge); 
+        oAreaInterpreter.setLanguage(oLanguage);
+        mapAreaInterpreters.emplace(area, oAreaInterpreter);
+    }    
 }
 
-void Interpreter::setLanguage(Language& oLanguage)
-{
-    oVerbsInterpreter.setLanguage(oLanguage);
-    oObjectsInterpreter.setLanguage(oLanguage);
-    oQualifiersInterpreter.setLanguage(oLanguage);
-    oNamesInterpreter.setLanguage(oLanguage);
-    oPrepositionsInterpreter.setLanguage(oLanguage);
-}
 
 Concept* Interpreter::interpretWord(std::string word)
 {
-    Concept* pConcepts[5];
-    pConcepts[0] = oVerbsInterpreter.interpretWord(word);
-    pConcepts[1] = oObjectsInterpreter.interpretWord(word);
-    pConcepts[2] = oQualifiersInterpreter.interpretWord(word);
-    pConcepts[3] = oNamesInterpreter.interpretWord(word);
-    pConcepts[4] = oPrepositionsInterpreter.interpretWord(word);
-    
-    Concept* pConcept = nullptr;
-    for (int i=0; i<5; i++)
-        if (pConcepts[i] != nullptr)
-        {
-            pConcept = pConcepts[i];
+    // (TEMP) done sequentially, but must be done in PARALLEL!
+    Concept* pConcept;
+    for (auto& x : mapAreaInterpreters) 
+    {
+        pConcept = x.second.interpretWord(word);
+        // if interpreted skip
+        if (pConcept != nullptr)
             break;
-        }
+    }    
     
     return pConcept;
 }

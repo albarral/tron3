@@ -6,19 +6,26 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
+#include <vector>
+
 #include "tron3/knowledge/Knowledge.h"
-#include "tron3/knowledge/KnowledgeArea.h"
 
 namespace tron3
 {
 // A knowledge builder is a class that loads all available knowledge in a Knowledge object.
 class KnowledgeBuilder
 {
-public:    
-    static void build(Knowledge& oKnowledge);
+private:
+    std::vector<Category*> listCategories;
     
-private:    
-    static void buildArea(KnowledgeArea* pKnowledgeArea);
+public:    
+    KnowledgeBuilder();
+    ~KnowledgeBuilder();
+    
+    // load all knowledge into the categories list
+    void load();
+    // transfer categories to given knowledge
+    void build(Knowledge& oKnowledge);    
 };
 
 }  

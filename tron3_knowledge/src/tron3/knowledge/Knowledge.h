@@ -6,27 +6,36 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
+#include <map>
+
+#include "tron3/knowledge/iKnowledgeStorage.h"
+#include "tron3/knowledge/Category.h"
 #include "tron3/knowledge/KnowledgeArea.h"
 
 namespace tron3
 {
 // The knowledge holds a set of knowledge areas, each holding all concept categories of a given nature.    
-class Knowledge
+class Knowledge : public iKnowledgeStorage
 {
-protected:
-    KnowledgeArea oActionsArea; 
-    KnowledgeArea oObjectsArea; 
-    KnowledgeArea oFeaturesArea; 
-    KnowledgeArea oInstancesArea; 
-    KnowledgeArea oNexesArea; 
+private:
+    std::map<int, KnowledgeArea> mapAreas;
 
 public:
     Knowledge();
     ~Knowledge ();
     
+    std::map<int, KnowledgeArea>& getMapAreas() {return mapAreas;};   
     void clear();
     KnowledgeArea* getKnowledgeArea(int area);
-    
+
+    // add specified category    
+    bool addCategory(Category& oCategory);
+
+    // add specified concept
+    bool addConcept(Concept& oConcept) override;
+    // search the concept of given area, category and id
+    Concept* searchConcept(int area, int categoryId, int conceptId) override;
+
     std::string toString();    
 };
 

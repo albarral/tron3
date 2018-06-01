@@ -9,6 +9,8 @@
 #include <log4cxx/logger.h>
 
 #include "tron3/interpret/iLanguageInterpreter.h"
+#include "tron3/language/Language.h"
+#include "tron3/language/LanguageArea.h"
 
 namespace tron3
 {
@@ -31,7 +33,7 @@ public:
     // set access to knowledge
     void setKnowledge(Knowledge& oKnowledge) override;
     // set access to language
-    void setLanguage(Language& oLanguage) override;;
+    void setLanguage(Language& oLanguage);
     // interpret the given word returning its associated concept
     Concept* interpretWord(std::string word) override;
 };

@@ -6,10 +6,12 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
+#include <map>
 #include <log4cxx/logger.h>
 
 #include "tron3/interpret/iLanguageInterpreter.h"
 #include "tron3/interpret/AreaInterpreter.h"
+#include "tron3/language/Language.h"
 
 namespace tron3
 {
@@ -18,22 +20,19 @@ class Interpreter : public iLanguageInterpreter
 {
 private:
     static log4cxx::LoggerPtr logger;
-    AreaInterpreter oVerbsInterpreter;        // area interpreter for action concepts
-    AreaInterpreter oObjectsInterpreter;      // area interpreter for object concepts
-    AreaInterpreter oQualifiersInterpreter;   // area interpreter for feature concepts
-    AreaInterpreter oNamesInterpreter;        // area interpreter for instance concepts
-    AreaInterpreter oPrepositionsInterpreter;     // area interpreter for nexus concepts
+    Language oLanguage;
+    std::map<int, AreaInterpreter> mapAreaInterpreters;    // area interpreters 
 
 public:
     Interpreter();
     ~Interpreter ();
     
+    Language& getLanguage() {return oLanguage;};
+    
     AreaInterpreter* getAreaInterpreter(int area);
     
     // set access to given knowledge
     void setKnowledge(Knowledge& oKnowledge) override;
-    // set access to given language
-    void setLanguage(Language& oLanguage) override;
     // interpret the given word returning its associated concept
     Concept* interpretWord(std::string word) override;    
 };

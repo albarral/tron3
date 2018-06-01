@@ -8,15 +8,15 @@
 
 #include <map>
 
+#include "tron3/knowledge/iKnowledgeStorage.h"
 #include "tron3/knowledge/Concept.h"
-#include "tron3/knowledge/iKnowledgeSearcher.h"
 
 namespace tron3
 {
 // A category is a group of mapped concepts.
 // The concepts in a category share the same nature (action, object, feature, ...) and belong to a same functional family (colors, shapes, animals, movement actions, ...)
 // A category is itself a concept
-class Category : public Concept, iKnowledgeSearcher 
+class Category : public Concept, iKnowledgeStorage 
 {
 private:
     std::map<int, Concept> mapConcepts; 
@@ -27,12 +27,13 @@ public:
     ~Category();
     
     void clear();
-    void addConcept(Concept& oConcept);
     std::map<int, Concept>& getMapConcepts() {return mapConcepts;};
     int getNumConcepts() {return mapConcepts.size();};    
-
-    // search the concept of given category and id
-    Concept* searchConcept(int categoryId, int conceptId) override;
+    
+    // add specified concept
+    bool addConcept(Concept& oConcept) override;
+    // search the concept of given area, category and id
+    Concept* searchConcept(int area, int categoryId, int conceptId) override;
 
     virtual std::string toString();
 };

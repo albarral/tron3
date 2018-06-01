@@ -3,6 +3,8 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
+#include <stdexcept>      // std::out_of_range
+
 #include "tron3/knowledge/Knowledge.h"
 #include "tron3/knowledge/defs/ConceptsNature.h"
 
@@ -10,13 +12,14 @@ namespace tron3
 {
 Knowledge::Knowledge()
 {          
-    oActionsArea.setArea(ConceptsNature::eNATURE_ACTION); 
-    oObjectsArea.setArea(ConceptsNature::eNATURE_OBJECT); 
-    oFeaturesArea.setArea(ConceptsNature::eNATURE_FEATURE); 
-    oInstancesArea.setArea(ConceptsNature::eNATURE_INSTANCE); 
-    oNexesArea.setArea(ConceptsNature::eNATURE_NEXUS); 
+    // create empty knowledge areas
+    KnowledgeArea oKnowledgeArea;
+    for (int area=0; area<ConceptsNature::eNATURE_DIM; area++)
+    {
+        oKnowledgeArea.setArea(area);
+        mapAreas.emplace(area, oKnowledgeArea);
+    }
 }
-
 
 Knowledge::~Knowledge()
 {
@@ -25,46 +28,68 @@ Knowledge::~Knowledge()
 
 void Knowledge::clear()
 {
-    oActionsArea.clear(); 
-    oObjectsArea.clear(); 
-    oFeaturesArea.clear(); 
-    oInstancesArea.clear(); 
-    oNexesArea.clear(); 
+    mapAreas.clear();
 }
 
 KnowledgeArea* Knowledge::getKnowledgeArea(int area)
 {
-    switch(area)
+    try 
     {
-        case ConceptsNature::eNATURE_ACTION:
-            return &oActionsArea;
-                
-        case ConceptsNature::eNATURE_OBJECT:
-            return &oObjectsArea;
-
-        case ConceptsNature::eNATURE_FEATURE:
-            return &oFeaturesArea;
-        
-        case ConceptsNature::eNATURE_INSTANCE:
-            return &oInstancesArea;
-        
-        case ConceptsNature::eNATURE_NEXUS:
-            return &oNexesArea;
-        
-        default:
-            return nullptr;
+        return &(mapAreas.at(area));
     }
+    // return null if not found
+    catch (const std::out_of_range& oor) 
+    {                
+        return nullptr;
+    }                    
+}
+
+bool Knowledge::addCategory(Category& oCategory)
+{          
+    // get proper knowledge area (by category nature)
+    KnowledgeArea* pKnowledgeArea = getKnowledgeArea(oCategory.getNature());
+    // if found, add category
+    if (pKnowledgeArea != nullptr)
+    {
+        pKnowledgeArea->addCategory(oCategory);                
+        return true;
+    }
+    // return false if not found
+    else
+        return false;
+}
+
+bool Knowledge::addConcept(Concept& oConcept)
+{
+    // get proper knowledge area (by concept nature)
+    KnowledgeArea* pKnowledgeArea = getKnowledgeArea(oConcept.getNature());
+    // if found, add concept
+    if (pKnowledgeArea != nullptr)
+        return pKnowledgeArea->addConcept(oConcept);
+    // return false if not found
+    else
+        return false;    
+}
+
+Concept* Knowledge::searchConcept(int area, int categoryId, int conceptId)
+{
+    // get proper knowledge area
+    KnowledgeArea* pKnowledgeArea = getKnowledgeArea(area);
+    // if found, search concept inside
+    if (pKnowledgeArea != nullptr)
+        return pKnowledgeArea->searchConcept(area, categoryId, conceptId);
+    // return null if not found
+    else
+        return nullptr;    
 }
 
 std::string Knowledge::toString()
 {
     std::string text = "Knowledge\n";
-    text += oActionsArea.toString() + "\n";        
-    text += oObjectsArea.toString() + "\n";        
-    text += oFeaturesArea.toString() + "\n";        
-    text += oInstancesArea.toString() + "\n";        
-    text += oNexesArea.toString() + "\n";        
-    
+    for (auto& x: mapAreas) 
+    {
+        text += x.second.toString() + "\n";        
+    }    
     return text;    
 }
 

@@ -29,15 +29,16 @@ void Category::clear()
     mapConcepts.clear();    
 }
 
-void Category::addConcept(Concept& oConcept)
+bool Category::addConcept(Concept& oConcept)
 {
     // when adding a concept to a category, transfer the category id & nature to the concept
     oConcept.setGroup(id);
     oConcept.setNature(nature);
     mapConcepts.emplace(oConcept.getID(), oConcept);
+    return true;
 }
 
-Concept* Category::searchConcept(int categoryId, int conceptId)
+Concept* Category::searchConcept(int area, int categoryId, int conceptId)
 {
     try 
     {

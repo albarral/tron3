@@ -29,7 +29,7 @@
         <itemPath>src/tron3/knowledge/KnowledgeArea.cpp</itemPath>
         <itemPath>src/tron3/knowledge/KnowledgeArea.h</itemPath>
         <itemPath>src/tron3/knowledge/iKnowledgeMapper.h</itemPath>
-        <itemPath>src/tron3/knowledge/iKnowledgeSearcher.h</itemPath>
+        <itemPath>src/tron3/knowledge/iKnowledgeStorage.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -116,7 +116,7 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/tron3/knowledge/iKnowledgeSearcher.h"
+      <item path="src/tron3/knowledge/iKnowledgeStorage.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -194,7 +194,7 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/tron3/knowledge/iKnowledgeSearcher.h"
+      <item path="src/tron3/knowledge/iKnowledgeStorage.h"
             ex="false"
             tool="3"
             flavor2="0">

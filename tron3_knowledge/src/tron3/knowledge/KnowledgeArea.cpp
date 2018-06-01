@@ -43,13 +43,25 @@ Category* KnowledgeArea::getCategory(int categoryId)
     }                    
 }
 
-Concept* KnowledgeArea::searchConcept(int categoryId, int conceptId)
+bool KnowledgeArea::addConcept(Concept& oConcept)
+{
+    // get proper category (by concept group)
+    Category* pCategory = getCategory(oConcept.getGroup());
+    // if found, add concept
+    if (pCategory != nullptr)
+        return pCategory->addConcept(oConcept);
+    // return false if not found
+    else
+        return false;    
+}
+
+Concept* KnowledgeArea::searchConcept(int area, int categoryId, int conceptId)
 {
     // get proper category
     Category* pCategory = getCategory(categoryId);
     // if found, search concept in category
     if (pCategory != nullptr)
-        return pCategory->searchConcept(categoryId, conceptId);
+        return pCategory->searchConcept(area, categoryId, conceptId);
     // return null if not found
     else
         return nullptr;    

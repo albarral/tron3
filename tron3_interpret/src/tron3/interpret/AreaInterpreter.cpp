@@ -42,7 +42,7 @@ Concept* AreaInterpreter::interpretWord(std::string word)
     tron::Element* pElement = pLanguageArea->searchWord(word);
     // if found, search its associated concept
     if (pElement != nullptr)
-        return pKnowledgeArea->searchConcept(pElement->getGroup(), pElement->getID());
+        return pKnowledgeArea->searchConcept(area, pElement->getGroup(), pElement->getID());
     // return null if not found
     else
         return nullptr;
