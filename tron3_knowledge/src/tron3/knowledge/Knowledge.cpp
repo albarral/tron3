@@ -83,6 +83,19 @@ Concept* Knowledge::searchConcept(int area, int categoryId, int conceptId)
         return nullptr;    
 }
 
+// describe path of given concept
+std::string Knowledge::describeConceptPath(Concept& oConcept)
+{
+    // get concept's area
+    KnowledgeArea* pKnowledgeArea = getKnowledgeArea(oConcept.getNature());
+    // return concept path
+    if (pKnowledgeArea != nullptr)
+        return pKnowledgeArea->describeConceptPath(oConcept);
+    // return unknown path if area not found
+    else
+        return "?";
+}
+
 std::string Knowledge::toString()
 {
     std::string text = "Knowledge\n";

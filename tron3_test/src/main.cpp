@@ -9,6 +9,7 @@
 #include <log4cxx/xml/domconfigurator.h>
 
 #include "TestKnowledge.h"
+#include "TestInterpret.h"
 
 // obtains user's home path
 std::string getHomePath();
@@ -18,6 +19,7 @@ log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("tron"));
 enum eTest
 {
     eTEST_KNOWLEDGE, 
+    eTEST_INTERPRETER, 
 };
 
 // main program
@@ -29,15 +31,22 @@ int main(int argc, char** argv)
         
     LOG4CXX_INFO(logger, "\n\nSTART tron3 test\n");
     
-    int test = eTEST_KNOWLEDGE;
+    int test = eTEST_INTERPRETER;       // test selection
 
     switch (test)
     {
         case eTEST_KNOWLEDGE:
         {
-            // test concepts lib
+            // test knowledge lib
             TestKnowledge oTestKnowledge;
             oTestKnowledge.makeTest();
+            break;
+        }
+        case eTEST_INTERPRETER:
+        {
+            // test interpret lib
+            TestInterpret oTestInterpret;
+            oTestInterpret.makeTest();
             break;
         }
     }

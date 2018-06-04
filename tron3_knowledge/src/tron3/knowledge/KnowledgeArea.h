@@ -39,6 +39,8 @@ public:
     bool addConcept(Concept& oConcept) override;
     // search the concept of given area, category and id
     Concept* searchConcept(int area, int categoryId, int conceptId) override;
+    // describe path of given concept
+    std::string describeConceptPath(Concept& oConcept) override;
     
     std::string toString();    
 };

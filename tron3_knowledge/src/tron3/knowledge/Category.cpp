@@ -51,6 +51,12 @@ Concept* Category::searchConcept(int area, int categoryId, int conceptId)
     }                
 }
 
+// describe path of given concept
+std::string Category::describeConceptPath(Concept& oConcept)
+{
+    return name + ":" + oConcept.getName();
+}
+
 std::string Category::toString()
 {
     std::string text = "Category [" + Concept::toString() + "]\n";

@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/TestInterpret.o \
 	${OBJECTDIR}/src/TestKnowledge.o \
 	${OBJECTDIR}/src/main.o
 
@@ -62,6 +63,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/src/TestInterpret.o: src/TestInterpret.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestInterpret.o src/TestInterpret.cpp
 
 ${OBJECTDIR}/src/TestKnowledge.o: src/TestKnowledge.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

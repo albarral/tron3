@@ -3,10 +3,11 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
+//#include <future>
 //#include <stdexcept>      // std::out_of_range
 
 #include "tron3/interpret/Interpreter.h"
-#include "tron3/knowledge/defs/ConceptsNature.h"
+#include "tron/util/StringUtil.h"
 
 using namespace log4cxx;
 
@@ -21,6 +22,7 @@ Interpreter::Interpreter()
 Interpreter::~Interpreter()
 {
     mapAreaInterpreters.clear();    
+    listPhraseConcepts.clear();
 }
 
 AreaInterpreter* Interpreter::getAreaInterpreter(int area)
@@ -69,6 +71,42 @@ Concept* Interpreter::interpretWord(std::string word)
     return pConcept;
 }
 
+//Concept* Interpreter::interpretWord2(std::string word)
+//{
+//    std::vector<std::future<Concept*>> futures;
+//    // launch area interpreters in parallel
+//    for (auto& x : mapAreaInterpreters) 
+//    {
+//        std::future<Concept*> futureConcept = std::async(x.second.interpretWord, word);
+//        futures.push_back(futureConcept);
+//    }    
+//
+//    //retrieve and print the value stored in the future
+//    Concept* pConcept = nullptr;
+//    for(auto &res : futures) 
+//    {
+//        pConcept = res.get();
+//        // if interpreted skip
+//        if (pConcept != nullptr)
+//            break;
+//    }
+//
+//    return pConcept;
+//}
+
+void Interpreter::processPhrase(std::string phrase)
+{
+    listPhraseConcepts.clear();
+    
+    Concept* pConcept;
+    std::vector<std::string> listWords = tron::StringUtil::split(phrase, " ");
+    for (std::string word : listWords)
+    {
+        pConcept = interpretWord(word);
+        if (pConcept != nullptr)
+            listPhraseConcepts.push_back(*pConcept);
+    }    
+}
 }
 
 

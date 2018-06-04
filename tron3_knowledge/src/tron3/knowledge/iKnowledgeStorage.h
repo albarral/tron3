@@ -6,6 +6,8 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
+#include <string>
+
 #include "tron3/knowledge/Concept.h"
 
 namespace tron3
@@ -18,6 +20,8 @@ public:
     virtual bool addConcept(Concept& oConcept) = 0;
     // search the concept of given area, category and id
     virtual Concept* searchConcept(int area, int categoryId, int conceptId) = 0;
+    // describe path of given concept
+    virtual std::string describeConceptPath(Concept& oConcept) = 0;
 };
 
 }  

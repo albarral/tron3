@@ -13,6 +13,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="src" displayName="src" projectFiles="true">
+        <itemPath>src/TestInterpret.cpp</itemPath>
+        <itemPath>src/TestInterpret.h</itemPath>
         <itemPath>src/TestKnowledge.cpp</itemPath>
         <itemPath>src/TestKnowledge.h</itemPath>
         <itemPath>src/main.cpp</itemPath>
@@ -119,6 +121,10 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="src/TestInterpret.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TestInterpret.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/TestKnowledge.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/TestKnowledge.h" ex="false" tool="3" flavor2="0">
@@ -146,6 +152,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="src/TestInterpret.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TestInterpret.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/TestKnowledge.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/TestKnowledge.h" ex="false" tool="3" flavor2="0">

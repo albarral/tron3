@@ -4,7 +4,6 @@
  ***************************************************************************/
 
 #include "TestKnowledge.h"
-#include "tron3/interpret/Interpreter.h"
 #include "tron3/knowledge/Concept.h"
 #include "tron3/knowledge/defs/ConceptsNature.h"
 #include "tron3/knowledge/defs/ObjectCategories.h"
@@ -24,39 +23,10 @@ void TestKnowledge::makeTest()
 {
     LOG4CXX_INFO(logger, modName + ": test start \n");
 
-    loadKnowledge();
-        
-    // create interpreter
-    tron3::Interpreter oInterpreter;   
-    oInterpreter.setKnowledge(oKnowledge);
-    
-    LOG4CXX_INFO(logger, oInterpreter.getLanguage().toString());     
+    // create knowledge
+    tron3::Knowledge oKnowledge;
+    loadKnowledge(oKnowledge);
 
-    // test interpreter
-    std::string word = "finger";
-    tron3::Concept* pConcept = oInterpreter.interpretWord(word);    
-    if (pConcept != nullptr)
-    {
-        LOG4CXX_INFO(logger, modName + ": " + pConcept->toString());
-    }           
-    else
-    {
-        LOG4CXX_INFO(logger, modName + ": word unknown " + word);
-    }
-        
-    
-    LOG4CXX_INFO(logger, modName + ": test end \n");
-};
-
-
-void TestKnowledge::loadKnowledge()
-{
-    LOG4CXX_INFO(logger, modName + ": loadKnowledge ...");
-    
-    tron3::KnowledgeBuilder oKnowledgeBuilder;
-    oKnowledgeBuilder.load();
-    oKnowledgeBuilder.build(oKnowledge);
-    
     // add new concept
     int nature = tron3::ConceptsNature::eNATURE_OBJECT;
     int category = tron3::ObjectCategories::eOBJECT_BODY;
@@ -65,7 +35,19 @@ void TestKnowledge::loadKnowledge()
     oNewConcept.setGroup(category);
     oKnowledge.addConcept(oNewConcept);
     
-//    LOG4CXX_INFO(logger, oKnowledge.toString());             
+    LOG4CXX_INFO(logger, oKnowledge.toString());             
+            
+    LOG4CXX_INFO(logger, modName + ": test end \n");
+}
+
+
+void TestKnowledge::loadKnowledge(tron3::Knowledge& oKnowledge)
+{
+    LOG4CXX_INFO(logger, modName + ": loadKnowledge ...");
+    
+    tron3::KnowledgeBuilder oKnowledgeBuilder;
+    oKnowledgeBuilder.load();
+    oKnowledgeBuilder.build(oKnowledge);        
 }
 
 

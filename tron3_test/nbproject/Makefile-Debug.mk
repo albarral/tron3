@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/TestInterpret.o \
 	${OBJECTDIR}/src/TestKnowledge.o \
 	${OBJECTDIR}/src/main.o
 
@@ -72,6 +73,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test: ../../tron/tron_util/dist
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/src/TestInterpret.o: src/TestInterpret.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../tron3_knowledge/src -I../tron3_knowledge2/src -I../tron3_language/src -I../tron3_interpret/src -I../../tron/tron_util/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestInterpret.o src/TestInterpret.cpp
 
 ${OBJECTDIR}/src/TestKnowledge.o: src/TestKnowledge.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
