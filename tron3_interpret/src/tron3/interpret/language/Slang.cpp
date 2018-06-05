@@ -5,7 +5,7 @@
 
 #include <stdexcept>      // std::out_of_range
 
-#include "tron3/language/Slang.h"
+#include "tron3/interpret/language/Slang.h"
 
 namespace tron3
 {

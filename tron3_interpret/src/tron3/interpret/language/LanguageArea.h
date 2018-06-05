@@ -1,5 +1,5 @@
-#ifndef _TRON3_LANGUAGE_LANGUAGE_AREA_H
-#define _TRON3_LANGUAGE_LANGUAGE_AREA_H
+#ifndef _TRON3_INTERPRET_LANGUAGE_AREA_H
+#define _TRON3_INTERPRET_LANGUAGE_AREA_H
 
 /***************************************************************************
  *   Copyright (C) 2018 by Migtron Robotics   *
@@ -9,8 +9,8 @@
 #include <map>
 
 #include "tron3/knowledge/iKnowledgeMapper.h"
-#include "tron3/language/iLanguageSearcher.h"
-#include "tron3/language/Slang.h"
+#include "tron3/interpret/language/iLanguageSearcher.h"
+#include "tron3/interpret/language/Slang.h"
 
 namespace tron3
 {

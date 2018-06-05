@@ -9,8 +9,8 @@
 #include <log4cxx/logger.h>
 
 #include "tron3/interpret/iLanguageInterpreter.h"
-#include "tron3/language/Language.h"
-#include "tron3/language/LanguageArea.h"
+#include "tron3/interpret/language/Language.h"
+#include "tron3/interpret/language/LanguageArea.h"
 
 namespace tron3
 {

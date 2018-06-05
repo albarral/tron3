@@ -1,5 +1,5 @@
-#ifndef __TRON3_LANGUAGE_SLANG_H
-#define __TRON3_LANGUAGE_SLANG_H
+#ifndef __TRON3_INTERPRET_SLANG_H
+#define __TRON3_INTERPRET_SLANG_H
 
 /***************************************************************************
  *   Copyright (C) 2018 by Migtron Robotics   *
@@ -8,7 +8,7 @@
 
 #include <map>
 
-#include "tron3/language/iLanguageSearcher.h"
+#include "tron3/interpret/language/iLanguageSearcher.h"
 
 namespace tron3
 {

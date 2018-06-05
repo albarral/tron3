@@ -12,7 +12,7 @@
 
 #include "tron3/interpret/iLanguageInterpreter.h"
 #include "tron3/interpret/AreaInterpreter.h"
-#include "tron3/language/Language.h"
+#include "tron3/interpret/language/Language.h"
 
 namespace tron3
 {

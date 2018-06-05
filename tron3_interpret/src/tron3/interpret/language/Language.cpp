@@ -5,7 +5,7 @@
 
 #include <stdexcept>      // std::out_of_range
 
-#include "tron3/language/Language.h"
+#include "tron3/interpret/language/Language.h"
 #include "tron3/knowledge/defs/ConceptsNature.h"
 
 namespace tron3

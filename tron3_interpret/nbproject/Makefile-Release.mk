@@ -36,7 +36,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/tron3/interpret/AreaInterpreter.o \
-	${OBJECTDIR}/src/tron3/interpret/Interpreter.o
+	${OBJECTDIR}/src/tron3/interpret/Interpreter.o \
+	${OBJECTDIR}/src/tron3/interpret/language/Language.o \
+	${OBJECTDIR}/src/tron3/interpret/language/LanguageArea.o \
+	${OBJECTDIR}/src/tron3/interpret/language/Slang.o
 
 
 # C Compiler Flags
@@ -72,6 +75,21 @@ ${OBJECTDIR}/src/tron3/interpret/Interpreter.o: src/tron3/interpret/Interpreter.
 	${MKDIR} -p ${OBJECTDIR}/src/tron3/interpret
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/interpret/Interpreter.o src/tron3/interpret/Interpreter.cpp
+
+${OBJECTDIR}/src/tron3/interpret/language/Language.o: src/tron3/interpret/language/Language.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/interpret/language
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/interpret/language/Language.o src/tron3/interpret/language/Language.cpp
+
+${OBJECTDIR}/src/tron3/interpret/language/LanguageArea.o: src/tron3/interpret/language/LanguageArea.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/interpret/language
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/interpret/language/LanguageArea.o src/tron3/interpret/language/LanguageArea.cpp
+
+${OBJECTDIR}/src/tron3/interpret/language/Slang.o: src/tron3/interpret/language/Slang.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/interpret/language
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/interpret/language/Slang.o src/tron3/interpret/language/Slang.cpp
 
 # Subprojects
 .build-subprojects:

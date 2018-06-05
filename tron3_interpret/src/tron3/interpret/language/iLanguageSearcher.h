@@ -1,5 +1,5 @@
-#ifndef _TRON3_LANGUAGE_LANGUAGE_SEARCHER_H
-#define _TRON3_LANGUAGE_LANGUAGE_SEARCHER_H
+#ifndef _TRON3_INTERPRET_LANGUAGE_SEARCHER_H
+#define _TRON3_INTERPRET_LANGUAGE_SEARCHER_H
 
 /***************************************************************************
  *   Copyright (C) 2018 by Migtron Robotics   *
