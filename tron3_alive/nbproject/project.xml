@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>tron3_test</name>
+            <name>tron3_alive</name>
             <c-extensions/>
             <cpp-extensions>cpp</cpp-extensions>
             <header-extensions>h</header-extensions>
@@ -13,20 +13,19 @@
                 <make-dep-project>../../tron/tron_control</make-dep-project>
                 <make-dep-project>../tron3_interpret</make-dep-project>
                 <make-dep-project>../../tron/tron_tools</make-dep-project>
-                <make-dep-project>../tron3_alive</make-dep-project>
                 <make-dep-project>../tron3_knowledge</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
-                <sourceRootElem>src</sourceRootElem>
+                <sourceRootElem>src/tron3/alive</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
                     <name>Debug</name>
-                    <type>1</type>
+                    <type>2</type>
                 </confElem>
                 <confElem>
                     <name>Release</name>
-                    <type>1</type>
+                    <type>2</type>
                 </confElem>
             </confList>
             <formatting>

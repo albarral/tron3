@@ -35,10 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/TestAlive.o \
-	${OBJECTDIR}/src/TestInterpret.o \
-	${OBJECTDIR}/src/TestKnowledge.o \
-	${OBJECTDIR}/src/main.o
+	${OBJECTDIR}/src/tron3/alive/AliveManager.o \
+	${OBJECTDIR}/src/tron3/alive/modules/Communicator.o
 
 
 # C Compiler Flags
@@ -59,31 +57,21 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron3_alive.${CND_DLIB_EXT}
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron3_alive.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron3_alive.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
 
-${OBJECTDIR}/src/TestAlive.o: src/TestAlive.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
+${OBJECTDIR}/src/tron3/alive/AliveManager.o: src/tron3/alive/AliveManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/alive
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestAlive.o src/TestAlive.cpp
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/alive/AliveManager.o src/tron3/alive/AliveManager.cpp
 
-${OBJECTDIR}/src/TestInterpret.o: src/TestInterpret.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
+${OBJECTDIR}/src/tron3/alive/modules/Communicator.o: src/tron3/alive/modules/Communicator.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/alive/modules
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestInterpret.o src/TestInterpret.cpp
-
-${OBJECTDIR}/src/TestKnowledge.o: src/TestKnowledge.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestKnowledge.o src/TestKnowledge.cpp
-
-${OBJECTDIR}/src/main.o: src/main.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/alive/modules/Communicator.o src/tron3/alive/modules/Communicator.cpp
 
 # Subprojects
 .build-subprojects:
@@ -91,7 +79,7 @@ ${OBJECTDIR}/src/main.o: src/main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron3_alive.${CND_DLIB_EXT}
 
 # Subprojects
 .clean-subprojects:

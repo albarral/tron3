@@ -8,16 +8,18 @@
 #include <log4cxx/logger.h>
 #include <log4cxx/xml/domconfigurator.h>
 
+#include "TestAlive.h"
 #include "TestKnowledge.h"
 #include "TestInterpret.h"
 
 // obtains user's home path
 std::string getHomePath();
 
-log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("tron"));
+log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("tron3"));
 
 enum eTest
 {
+    eTEST_ALIVE, 
     eTEST_KNOWLEDGE, 
     eTEST_INTERPRETER, 
 };
@@ -31,10 +33,17 @@ int main(int argc, char** argv)
         
     LOG4CXX_INFO(logger, "\n\nSTART tron3 test\n");
     
-    int test = eTEST_INTERPRETER;       // test selection
+    int test = eTEST_ALIVE;       // test selection
 
     switch (test)
     {
+        case eTEST_ALIVE:
+        {
+            // test alive lib
+            TestAlive oTestAlive;
+            oTestAlive.makeTest();
+            break;
+        }
         case eTEST_KNOWLEDGE:
         {
             // test knowledge lib
