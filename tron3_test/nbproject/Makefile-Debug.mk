@@ -54,17 +54,13 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-Wl,-rpath,../tron3_knowledge/dist/Debug/GNU-Linux -L../tron3_knowledge/dist/Debug/GNU-Linux -ltron3_knowledge -Wl,-rpath,../tron3_knowledge2/dist/Debug/GNU-Linux -L../tron3_knowledge2/dist/Debug/GNU-Linux -ltron3_knowledge2 -Wl,-rpath,../tron3_language/dist/Debug/GNU-Linux -L../tron3_language/dist/Debug/GNU-Linux -ltron3_language -Wl,-rpath,../tron3_interpret/dist/Debug/GNU-Linux -L../tron3_interpret/dist/Debug/GNU-Linux -ltron3_interpret -Wl,-rpath,../../tron/tron_util/dist/Debug/GNU-Linux -L../../tron/tron_util/dist/Debug/GNU-Linux -ltron_util -llog4cxx
+LDLIBSOPTIONS=-Wl,-rpath,../tron3_knowledge/dist/Debug/GNU-Linux -L../tron3_knowledge/dist/Debug/GNU-Linux -ltron3_knowledge -Wl,-rpath,../tron3_interpret/dist/Debug/GNU-Linux -L../tron3_interpret/dist/Debug/GNU-Linux -ltron3_interpret -Wl,-rpath,../../tron/tron_util/dist/Debug/GNU-Linux -L../../tron/tron_util/dist/Debug/GNU-Linux -ltron_util -llog4cxx
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test: ../tron3_knowledge/dist/Debug/GNU-Linux/libtron3_knowledge.so
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test: ../tron3_knowledge2/dist/Debug/GNU-Linux/libtron3_knowledge2.so
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test: ../tron3_language/dist/Debug/GNU-Linux/libtron3_language.so
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test: ../tron3_interpret/dist/Debug/GNU-Linux/libtron3_interpret.so
 
@@ -77,23 +73,21 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron3_test: ${OBJECTFILES}
 ${OBJECTDIR}/src/TestInterpret.o: src/TestInterpret.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron3_knowledge/src -I../tron3_knowledge2/src -I../tron3_language/src -I../tron3_interpret/src -I../../tron/tron_util/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestInterpret.o src/TestInterpret.cpp
+	$(COMPILE.cc) -g -Isrc -I../tron3_knowledge/src -I../tron3_interpret/src -I../../tron/tron_util/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestInterpret.o src/TestInterpret.cpp
 
 ${OBJECTDIR}/src/TestKnowledge.o: src/TestKnowledge.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron3_knowledge/src -I../tron3_knowledge2/src -I../tron3_language/src -I../tron3_interpret/src -I../../tron/tron_util/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestKnowledge.o src/TestKnowledge.cpp
+	$(COMPILE.cc) -g -Isrc -I../tron3_knowledge/src -I../tron3_interpret/src -I../../tron/tron_util/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestKnowledge.o src/TestKnowledge.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron3_knowledge/src -I../tron3_knowledge2/src -I../tron3_language/src -I../tron3_interpret/src -I../../tron/tron_util/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
+	$(COMPILE.cc) -g -Isrc -I../tron3_knowledge/src -I../tron3_interpret/src -I../../tron/tron_util/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 # Subprojects
 .build-subprojects:
 	cd ../tron3_knowledge && ${MAKE}  -f Makefile CONF=Debug
-	cd ../tron3_knowledge2 && ${MAKE}  -f Makefile CONF=Debug
-	cd ../tron3_language && ${MAKE}  -f Makefile CONF=Debug
 	cd ../tron3_interpret && ${MAKE}  -f Makefile CONF=Debug
 	cd ../../tron/tron_util && ${MAKE}  -f Makefile CONF=Debug
 
@@ -105,8 +99,6 @@ ${OBJECTDIR}/src/main.o: src/main.cpp
 # Subprojects
 .clean-subprojects:
 	cd ../tron3_knowledge && ${MAKE}  -f Makefile CONF=Debug clean
-	cd ../tron3_knowledge2 && ${MAKE}  -f Makefile CONF=Debug clean
-	cd ../tron3_language && ${MAKE}  -f Makefile CONF=Debug clean
 	cd ../tron3_interpret && ${MAKE}  -f Makefile CONF=Debug clean
 	cd ../../tron/tron_util && ${MAKE}  -f Makefile CONF=Debug clean
 

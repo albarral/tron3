@@ -39,6 +39,18 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tron3/knowledge/Concept.o \
 	${OBJECTDIR}/src/tron3/knowledge/Knowledge.o \
 	${OBJECTDIR}/src/tron3/knowledge/KnowledgeArea.o \
+	${OBJECTDIR}/src/tron3/knowledge/builder/KnowledgeBuilder.o \
+	${OBJECTDIR}/src/tron3/knowledge/builder/actions/ManipulationCategory.o \
+	${OBJECTDIR}/src/tron3/knowledge/builder/actions/MovementCategory.o \
+	${OBJECTDIR}/src/tron3/knowledge/builder/features/AffirmationCategory.o \
+	${OBJECTDIR}/src/tron3/knowledge/builder/features/ColorCategory.o \
+	${OBJECTDIR}/src/tron3/knowledge/builder/features/DirectionCategory.o \
+	${OBJECTDIR}/src/tron3/knowledge/builder/features/LocationCategory.o \
+	${OBJECTDIR}/src/tron3/knowledge/builder/features/ProximityCategory.o \
+	${OBJECTDIR}/src/tron3/knowledge/builder/features/QuantityCategory.o \
+	${OBJECTDIR}/src/tron3/knowledge/builder/features/SpeedCategory.o \
+	${OBJECTDIR}/src/tron3/knowledge/builder/objects/BodyCategory.o \
+	${OBJECTDIR}/src/tron3/knowledge/builder/objects/ShapesCategory.o \
 	${OBJECTDIR}/src/tron3/knowledge/defs/ConceptsNature.o
 
 
@@ -85,6 +97,66 @@ ${OBJECTDIR}/src/tron3/knowledge/KnowledgeArea.o: src/tron3/knowledge/KnowledgeA
 	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/KnowledgeArea.o src/tron3/knowledge/KnowledgeArea.cpp
+
+${OBJECTDIR}/src/tron3/knowledge/builder/KnowledgeBuilder.o: src/tron3/knowledge/builder/KnowledgeBuilder.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/builder
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/builder/KnowledgeBuilder.o src/tron3/knowledge/builder/KnowledgeBuilder.cpp
+
+${OBJECTDIR}/src/tron3/knowledge/builder/actions/ManipulationCategory.o: src/tron3/knowledge/builder/actions/ManipulationCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/builder/actions
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/builder/actions/ManipulationCategory.o src/tron3/knowledge/builder/actions/ManipulationCategory.cpp
+
+${OBJECTDIR}/src/tron3/knowledge/builder/actions/MovementCategory.o: src/tron3/knowledge/builder/actions/MovementCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/builder/actions
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/builder/actions/MovementCategory.o src/tron3/knowledge/builder/actions/MovementCategory.cpp
+
+${OBJECTDIR}/src/tron3/knowledge/builder/features/AffirmationCategory.o: src/tron3/knowledge/builder/features/AffirmationCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/builder/features
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/builder/features/AffirmationCategory.o src/tron3/knowledge/builder/features/AffirmationCategory.cpp
+
+${OBJECTDIR}/src/tron3/knowledge/builder/features/ColorCategory.o: src/tron3/knowledge/builder/features/ColorCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/builder/features
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/builder/features/ColorCategory.o src/tron3/knowledge/builder/features/ColorCategory.cpp
+
+${OBJECTDIR}/src/tron3/knowledge/builder/features/DirectionCategory.o: src/tron3/knowledge/builder/features/DirectionCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/builder/features
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/builder/features/DirectionCategory.o src/tron3/knowledge/builder/features/DirectionCategory.cpp
+
+${OBJECTDIR}/src/tron3/knowledge/builder/features/LocationCategory.o: src/tron3/knowledge/builder/features/LocationCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/builder/features
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/builder/features/LocationCategory.o src/tron3/knowledge/builder/features/LocationCategory.cpp
+
+${OBJECTDIR}/src/tron3/knowledge/builder/features/ProximityCategory.o: src/tron3/knowledge/builder/features/ProximityCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/builder/features
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/builder/features/ProximityCategory.o src/tron3/knowledge/builder/features/ProximityCategory.cpp
+
+${OBJECTDIR}/src/tron3/knowledge/builder/features/QuantityCategory.o: src/tron3/knowledge/builder/features/QuantityCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/builder/features
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/builder/features/QuantityCategory.o src/tron3/knowledge/builder/features/QuantityCategory.cpp
+
+${OBJECTDIR}/src/tron3/knowledge/builder/features/SpeedCategory.o: src/tron3/knowledge/builder/features/SpeedCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/builder/features
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/builder/features/SpeedCategory.o src/tron3/knowledge/builder/features/SpeedCategory.cpp
+
+${OBJECTDIR}/src/tron3/knowledge/builder/objects/BodyCategory.o: src/tron3/knowledge/builder/objects/BodyCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/builder/objects
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/builder/objects/BodyCategory.o src/tron3/knowledge/builder/objects/BodyCategory.cpp
+
+${OBJECTDIR}/src/tron3/knowledge/builder/objects/ShapesCategory.o: src/tron3/knowledge/builder/objects/ShapesCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/builder/objects
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron3/knowledge/builder/objects/ShapesCategory.o src/tron3/knowledge/builder/objects/ShapesCategory.cpp
 
 ${OBJECTDIR}/src/tron3/knowledge/defs/ConceptsNature.o: src/tron3/knowledge/defs/ConceptsNature.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron3/knowledge/defs

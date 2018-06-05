@@ -13,6 +13,38 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="knowledge" displayName="knowledge" projectFiles="true">
+        <logicalFolder name="builder" displayName="builder" projectFiles="true">
+          <logicalFolder name="actions" displayName="actions" projectFiles="true">
+            <itemPath>src/tron3/knowledge/builder/actions/ManipulationCategory.cpp</itemPath>
+            <itemPath>src/tron3/knowledge/builder/actions/ManipulationCategory.h</itemPath>
+            <itemPath>src/tron3/knowledge/builder/actions/MovementCategory.cpp</itemPath>
+            <itemPath>src/tron3/knowledge/builder/actions/MovementCategory.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="features" displayName="features" projectFiles="true">
+            <itemPath>src/tron3/knowledge/builder/features/AffirmationCategory.cpp</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/AffirmationCategory.h</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/ColorCategory.cpp</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/ColorCategory.h</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/DirectionCategory.cpp</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/DirectionCategory.h</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/LocationCategory.cpp</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/LocationCategory.h</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/ProximityCategory.cpp</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/ProximityCategory.h</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/QuantityCategory.cpp</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/QuantityCategory.h</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/SpeedCategory.cpp</itemPath>
+            <itemPath>src/tron3/knowledge/builder/features/SpeedCategory.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="objects" displayName="objects" projectFiles="true">
+            <itemPath>src/tron3/knowledge/builder/objects/BodyCategory.cpp</itemPath>
+            <itemPath>src/tron3/knowledge/builder/objects/BodyCategory.h</itemPath>
+            <itemPath>src/tron3/knowledge/builder/objects/ShapesCategory.cpp</itemPath>
+            <itemPath>src/tron3/knowledge/builder/objects/ShapesCategory.h</itemPath>
+          </logicalFolder>
+          <itemPath>src/tron3/knowledge/builder/KnowledgeBuilder.cpp</itemPath>
+          <itemPath>src/tron3/knowledge/builder/KnowledgeBuilder.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="defs" displayName="defs" projectFiles="true">
           <itemPath>src/tron3/knowledge/defs/ActionCategories.h</itemPath>
           <itemPath>src/tron3/knowledge/defs/ConceptsNature.cpp</itemPath>
@@ -82,6 +114,126 @@
             flavor2="0">
       </item>
       <item path="src/tron3/knowledge/KnowledgeArea.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/KnowledgeBuilder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/KnowledgeBuilder.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/actions/ManipulationCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/actions/ManipulationCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/actions/MovementCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/actions/MovementCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/AffirmationCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/AffirmationCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/ColorCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/ColorCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/DirectionCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/DirectionCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/LocationCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/LocationCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/ProximityCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/ProximityCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/QuantityCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/QuantityCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/SpeedCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/SpeedCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/objects/BodyCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/objects/BodyCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/objects/ShapesCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/objects/ShapesCategory.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -160,6 +312,126 @@
             flavor2="0">
       </item>
       <item path="src/tron3/knowledge/KnowledgeArea.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/KnowledgeBuilder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/KnowledgeBuilder.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/actions/ManipulationCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/actions/ManipulationCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/actions/MovementCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/actions/MovementCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/AffirmationCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/AffirmationCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/ColorCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/ColorCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/DirectionCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/DirectionCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/LocationCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/LocationCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/ProximityCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/ProximityCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/QuantityCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/QuantityCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/SpeedCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/features/SpeedCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/objects/BodyCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/objects/BodyCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/objects/ShapesCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/knowledge/builder/objects/ShapesCategory.h"
             ex="false"
             tool="3"
             flavor2="0">

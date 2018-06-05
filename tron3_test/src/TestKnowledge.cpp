@@ -7,7 +7,7 @@
 #include "tron3/knowledge/Concept.h"
 #include "tron3/knowledge/defs/ConceptsNature.h"
 #include "tron3/knowledge/defs/ObjectCategories.h"
-#include "tron3/knowledge2/KnowledgeBuilder.h"
+#include "tron3/knowledge/builder/KnowledgeBuilder.h"
 
 using namespace log4cxx;
 

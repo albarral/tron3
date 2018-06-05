@@ -7,7 +7,7 @@
 
 #include "TestInterpret.h"
 #include "tron3/knowledge/Concept.h"
-#include "tron3/knowledge2/KnowledgeBuilder.h"
+#include "tron3/knowledge/builder/KnowledgeBuilder.h"
 
 using namespace log4cxx;
 
