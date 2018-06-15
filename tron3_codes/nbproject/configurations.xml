@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="codes" displayName="codes" projectFiles="true">
+        <logicalFolder name="f1" displayName="actions" projectFiles="true">
+          <itemPath>src/tron3/codes/actions/ManipulationCodes.cpp</itemPath>
+          <itemPath>src/tron3/codes/actions/ManipulationCodes.h</itemPath>
+          <itemPath>src/tron3/codes/actions/MovementCodes.cpp</itemPath>
+          <itemPath>src/tron3/codes/actions/MovementCodes.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="features" projectFiles="true">
+          <itemPath>src/tron3/codes/features/AffirmationCodes.cpp</itemPath>
+          <itemPath>src/tron3/codes/features/AffirmationCodes.h</itemPath>
+          <itemPath>src/tron3/codes/features/ColorCodes.cpp</itemPath>
+          <itemPath>src/tron3/codes/features/ColorCodes.h</itemPath>
+          <itemPath>src/tron3/codes/features/DirectionCodes.cpp</itemPath>
+          <itemPath>src/tron3/codes/features/DirectionCodes.h</itemPath>
+          <itemPath>src/tron3/codes/features/LocationCodes.cpp</itemPath>
+          <itemPath>src/tron3/codes/features/LocationCodes.h</itemPath>
+          <itemPath>src/tron3/codes/features/ProximityCodes.cpp</itemPath>
+          <itemPath>src/tron3/codes/features/ProximityCodes.h</itemPath>
+          <itemPath>src/tron3/codes/features/QuantityCodes.cpp</itemPath>
+          <itemPath>src/tron3/codes/features/QuantityCodes.h</itemPath>
+          <itemPath>src/tron3/codes/features/SpeedCodes.cpp</itemPath>
+          <itemPath>src/tron3/codes/features/SpeedCodes.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f3" displayName="objects" projectFiles="true">
+          <itemPath>src/tron3/codes/objects/BodyCodes.cpp</itemPath>
+          <itemPath>src/tron3/codes/objects/BodyCodes.h</itemPath>
+          <itemPath>src/tron3/codes/objects/ShapeCodes.cpp</itemPath>
+          <itemPath>src/tron3/codes/objects/ShapeCodes.h</itemPath>
+        </logicalFolder>
+        <itemPath>src/tron3/codes/ActionCodes.cpp</itemPath>
+        <itemPath>src/tron3/codes/ActionCodes.h</itemPath>
+        <itemPath>src/tron3/codes/FeatureCodes.cpp</itemPath>
+        <itemPath>src/tron3/codes/FeatureCodes.h</itemPath>
+        <itemPath>src/tron3/codes/NatureCodes.cpp</itemPath>
+        <itemPath>src/tron3/codes/NatureCodes.h</itemPath>
+        <itemPath>src/tron3/codes/NexusCodes.cpp</itemPath>
+        <itemPath>src/tron3/codes/NexusCodes.h</itemPath>
+        <itemPath>src/tron3/codes/ObjectCodes.cpp</itemPath>
+        <itemPath>src/tron3/codes/ObjectCodes.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>src/tron3/codes</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>src</pElem>
+            <pElem>../../tron/tron_util/src</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron3_codes.${CND_DLIB_EXT}</output>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../../tron/tron_util"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../../tron/tron_util"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_util.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="src/tron3/codes/ActionCodes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/ActionCodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/FeatureCodes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/FeatureCodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/NatureCodes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/NatureCodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/NexusCodes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/NexusCodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/ObjectCodes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/ObjectCodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/actions/ManipulationCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/actions/ManipulationCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/actions/MovementCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/actions/MovementCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/AffirmationCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/AffirmationCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/ColorCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/ColorCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/DirectionCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/DirectionCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/LocationCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/LocationCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/ProximityCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/ProximityCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/QuantityCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/QuantityCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/SpeedCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/SpeedCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/objects/BodyCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/objects/BodyCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/objects/ShapeCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/objects/ShapeCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="src/tron3/codes/ActionCodes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/ActionCodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/FeatureCodes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/FeatureCodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/NatureCodes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/NatureCodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/NexusCodes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/NexusCodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/ObjectCodes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/ObjectCodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron3/codes/actions/ManipulationCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/actions/ManipulationCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/actions/MovementCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/actions/MovementCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/AffirmationCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/AffirmationCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/ColorCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/ColorCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/DirectionCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/DirectionCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/LocationCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/LocationCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/ProximityCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/ProximityCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/QuantityCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/QuantityCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/SpeedCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/features/SpeedCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/objects/BodyCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/objects/BodyCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/objects/ShapeCodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron3/codes/objects/ShapeCodes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
